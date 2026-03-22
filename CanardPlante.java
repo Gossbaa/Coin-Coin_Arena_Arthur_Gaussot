@@ -11,8 +11,8 @@ class CanardPlante extends CanardDeCombat {
     }
 
     @Override
-    public String getType() {
-        return "Plante";
+    public TypeElementaire getType() {
+        return TypeElementaire.PLANTE;
     }
 
     public void regenerer() {
