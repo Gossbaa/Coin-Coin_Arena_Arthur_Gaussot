@@ -11,8 +11,8 @@ class CanardClassique extends CanardDeCombat {
     }
 
     @Override
-    public String getType() {
-        return "Normal";
+    public TypeElementaire getType() {
+        return TypeElementaire.NORMAL;
     }
     
     
