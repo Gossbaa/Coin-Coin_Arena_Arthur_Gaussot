@@ -1,3 +1,4 @@
+
 class CanardEau extends CanardDeCombat {
     private int pressionJet;
 
@@ -12,8 +13,8 @@ class CanardEau extends CanardDeCombat {
     }
 
     @Override
-    public String getType() {
-        return "Eau";
+    public TypeElementaire getType() {
+        return TypeElementaire.EAU;
     }
 
     @Override
