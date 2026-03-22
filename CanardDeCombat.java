@@ -67,6 +67,12 @@ public abstract class CanardDeCombat {
     public void soigner() {
         this.pvActuels = this.pvMax;
     }
+    protected void gagnerPv(int soin) {
+        this.pvActuels += soin;
+        if (this.pvActuels > this.pvMax) {
+            this.pvActuels = this.pvMax;
+        }
+    }
 
     @Override
     public String toString() {
