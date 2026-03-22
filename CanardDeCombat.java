@@ -108,7 +108,7 @@ public abstract class CanardDeCombat {
     }
 
     // Méthode utilitaire 
-   private double calculerMultiplicateurType(String typeAttaquant, String typeCible) {
+   protected double calculerMultiplicateurType(String typeAttaquant, String typeCible) {
     // type  Feu
     if (typeAttaquant.equals("Feu") && typeCible.equals("Plante")) return 2.0;
     if (typeAttaquant.equals("Feu") && typeCible.equals("Eau")) return 0.5;
