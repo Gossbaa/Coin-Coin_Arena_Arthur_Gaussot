@@ -15,19 +15,19 @@ class CanardFeu extends CanardDeCombat {
         this(nom, pvMax, atk, 1.0); // Intensité de 1.0 par défaut
     }
 
+    
     @Override
-    public String getType() {
-        return "Feu";
+    public TypeElementaire getType() {
+        return TypeElementaire.FEU;
     }
 
-    
     @Override
     public void attaquer(CanardDeCombat cible) {
         if (this.estKO() || cible.estKO()) return;
 
         System.out.println(this.getSurnom() + " attaque " + cible.getSurnom() + " !");
 
-        // Utilisation de l'intensité de la flamme dans le calcul
+        
         double multiplicateur = calculerMultiplicateurType(this.getType(), cible.getType());
         int degatsFinaux = (int) (this.getAtk() * multiplicateur * this.intensiteFlamme);
 
