@@ -19,4 +19,9 @@ public double etreAttaqueePar(CanardEau attaquant) { return 0.5; } // Résiste �
 @Override 
 public double etreAttaqueePar(CanardPlante attaquant) { return 0.5; } // Résiste à la plante
 
+@Override
+public void finDeTour() {
+    this.regenerer();
+}
+
 }
