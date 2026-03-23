@@ -17,3 +17,7 @@ Pour ce faire, on utilise l'abstraction via une méthode polymorphe  : Au lieu d
 
 Nous avons dû écrire 13 méthodes etreAttaqueePar au total (4 dans la classe mère et 9 redéfinies dans les sous-classes).
 L'ajout d'un 5ème type, comme Électrique, montre parfaitement les limites de cette approche. La lourdeur du Double Dispatch saute aux yeux car il devient obligatoire de modifier la classe mère pour y déclarer la nouvelle attaque, puis d'aller modifier toutes les sous-classes existantes pour la redéfinir. Bien que cette solution soit du polymorphisme pur et évite les conditions inutiles, elle viole le principe Ouvert/Fermé (SOLID). 
+
+# Reflexion R4
+
+Créer ces interfaces permet de s'affranchir de l'héritage strict qui impose qu'un participant "soit" un canard. Si l'arène était codée pour n'accepter que des objets de type CanardDeCombat, l'ajout d'un robot ou d'un dresseur serait impossible sans modifier son fonctionnement interne. Les interfaces remplacent cette contrainte d'identité par un simple contrat de capacité : tout objet qui implémente Combattant garantit au programme qu'il possède les méthodes pour attaquer et être mis KO. Ainsi, en programmant l'arène pour qu'elle manipule des Combattant ou des Soignable plutôt que des canards spécifiques, il devient possible d'ajouter n'importe quel nouveau type d'entité à l'avenir sans jamais avoir à retoucher le code de l'arène.
