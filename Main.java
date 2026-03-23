@@ -1,7 +1,16 @@
+/**
+ * Classe principale du programme Coin-Coin Arena.
+ * Crée les équipes, les canards, et lance le combat.
+ */
 public class Main {
+    /**
+     * Méthode principale qui exécute le programme.
+     * @param args Arguments de la ligne de commande (non utilisés).
+     */
     public static void main(String[] args) {
         
         
+        // Création de l'équipe de Sacha
         Equipe sacha = new Equipe("Sacha");
         
         CanardFeu gerard = new CanardFeu("Canard Flamme", 39, 52);
@@ -17,6 +26,7 @@ public class Main {
         sacha.ajouter(coincoin);
         sacha.ajouter(fernand);
 
+        // Création de l'équipe d'Ondine
         Equipe ondine = new Equipe("Ondine");
         
         CanardEau hubert = new CanardEau("Canard Marin", 44, 48);

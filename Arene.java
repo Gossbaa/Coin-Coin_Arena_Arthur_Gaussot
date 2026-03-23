@@ -1,15 +1,28 @@
+/**
+ * Classe représentant l'arène où se déroulent les combats entre équipes de canards.
+ * Gère la logique de combat tour par tour.
+ */
 public class Arene {
     
+    /**
+     * Lance un combat entre deux équipes jusqu'à ce qu'une équipe soit entièrement KO.
+     * Gère les tours, les attaques, les changements de canards et la fin de tour.
+     * @param e1 La première équipe.
+     * @param e2 La deuxième équipe.
+     */
+    public void combattre(Equipe e1, Equipe e2) {
     public void combattre(Equipe e1, Equipe e2) {
         System.out.println("=== COMBAT ===");
         int tour = 1;
 
+        // Sélection des premiers canards valides
         CanardDeCombat c1 = e1.getPremierValide();
         CanardDeCombat c2 = e2.getPremierValide();
 
         if (c1 != null) System.out.println(e1.getNomDresseur() + " envoie " + c1.getSurnom() + " !");
         if (c2 != null) System.out.println(e2.getNomDresseur() + " envoie " + c2.getSurnom() + " !");
 
+        // Boucle principale du combat
         while (!e1.touteKO() && !e2.touteKO()) {
             System.out.println("\nTour " + tour + " :");
             
