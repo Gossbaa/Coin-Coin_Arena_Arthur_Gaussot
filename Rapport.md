@@ -21,3 +21,7 @@ L'ajout d'un 5ème type, comme Électrique, montre parfaitement les limites de c
 # Reflexion R4
 
 Créer ces interfaces permet de s'affranchir de l'héritage strict qui impose qu'un participant "soit" un canard. Si l'arène était codée pour n'accepter que des objets de type CanardDeCombat, l'ajout d'un robot ou d'un dresseur serait impossible sans modifier son fonctionnement interne. Les interfaces remplacent cette contrainte d'identité par un simple contrat de capacité : tout objet qui implémente Combattant garantit au programme qu'il possède les méthodes pour attaquer et être mis KO. Ainsi, en programmant l'arène pour qu'elle manipule des Combattant ou des Soignable plutôt que des canards spécifiques, il devient possible d'ajouter n'importe quel nouveau type d'entité à l'avenir sans jamais avoir à retoucher le code de l'arène.
+
+# Reflexion R5
+
+L'approche par héritage crée effectivement une explosion combinatoire. Pour 4 types et 3 comportements, nous serions obligés de coder et maintenir 12 classes distinctes. Si un canard pouvait cumuler plusieurs comportements, ce nombre exploserait de façon exponentielle. Cela illustre parfaitement la rigidité de l'héritage strict pour ajouter des fonctionnalités : la création de sous-classes devient très vite ingérable. Pour résoudre ce problème, la conception orientée objet privilégie la composition, ce qui permet d'attacher dynamiquement un comportement de "confusion" à n'importe quel objet de base sans avoir à multiplier les classes.
