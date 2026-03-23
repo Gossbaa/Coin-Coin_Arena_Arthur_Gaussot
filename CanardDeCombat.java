@@ -1,29 +1,6 @@
-/**
- * Interface définissant les capacités de soin d'une entité.
- * Permet de soigner n'importe quel objet qui l'implémente (pas seulement des canards).
- */
-public interface Soignable {
-    void soigner();
-    int getPvActuels();
-    int getPvMax();
-    
-    /**
-     * Méthode par défaut permettant de calculer le pourcentage de vie restant.
-     * Accessible automatiquement par toutes les classes implémentant Soignable.
-     */
-    default double pourcentagePV() {
-        return (double) getPvActuels() / getPvMax() * 100;
-    }
-}
 
-/**
- * Interface définissant les actions de base d'un combattant dans l'arène.
- */
-public interface Combattant {
-    void attaquer(CanardDeCombat cible);
-    boolean estKO();
-    String getNom();
-}
+
+
 
 /**
  * Classe de base abstraite représentant tous les canards de l'arène.
