@@ -25,3 +25,9 @@ Créer ces interfaces permet de s'affranchir de l'héritage strict qui impose qu
 # Reflexion R5
 
 L'approche par héritage crée effectivement une explosion combinatoire. Pour 4 types et 3 comportements, nous serions obligés de coder et maintenir 12 classes distinctes. Si un canard pouvait cumuler plusieurs comportements, ce nombre exploserait de façon exponentielle. Cela illustre parfaitement la rigidité de l'héritage strict pour ajouter des fonctionnalités : la création de sous-classes devient très vite ingérable. Pour résoudre ce problème, la conception orientée objet privilégie la composition, ce qui permet d'attacher dynamiquement un comportement de "confusion" à n'importe quel objet de base sans avoir à multiplier les classes.
+
+# Reflexion R6
+
+L'utilisation de instanceof est ici un signe flagrant de mauvaise conception. Cela force la classe Arene à connaître les types spécifiques de canards et leurs comportements intimes, ce qui brise l'encapsulation.
+La solution orientée objet est d'utiliser le polymorphisme avec une méthode finDeTour() déclarée dans la classe mère et redéfinie uniquement dans les sous-classes qui en ont besoin.
+Si l'on ajoute un CanardGlace qui fond à chaque tour, on code simplement sa perte de PV dans sa propre méthode finDeTour(). La classe Arene n'aura jamais besoin d'être modifiée : elle se contentera d'appeler canard.finDeTour() pour chaque combattant en lice. C'est la résolution dynamique qui exécutera automatiquement le bon comportement selon le type réel du canard.
