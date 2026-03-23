@@ -19,4 +19,11 @@ public class CanardFeu extends CanardDeCombat {
     }
 
     
+@Override 
+public double etreAttaqueePar(CanardFeu attaquant) { return 0.5; } // Résiste au feu
+@Override 
+public double etreAttaqueePar(CanardEau attaquant) { return 2.0; } // Faible face à l'eau
+@Override 
+public double etreAttaqueePar(CanardPlante attaquant) { return 0.5; } // Résiste à la plante
+
 }
