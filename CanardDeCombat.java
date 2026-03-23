@@ -122,4 +122,11 @@ public abstract class CanardDeCombat implements Soignable, Combattant {
      * Vide par défaut, redéfinie dans les classes nécessitant un effet persistant.
      */
     public void finDeTour() {}
+
+    protected void gagnerPv(int soin) {
+        this.pvActuels += soin;
+        if (this.pvActuels > this.pvMax) {
+            this.pvActuels = this.pvMax;
+        }
+    }
 }

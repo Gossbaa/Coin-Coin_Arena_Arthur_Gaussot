@@ -53,4 +53,12 @@ public class CanardPlante extends CanardDeCombat {
         this.regenerer();
     }
 
+    public void regenerer() {
+        if (!this.estKO()) {
+            int soin = (int) (this.getPvMax() * 0.10); // Soigne 10% des PV max
+            this.gagnerPv(soin); 
+            System.out.println(this.getSurnom() + " se régénère de " + soin + " PV !");
+        }
+    }
+
 }
