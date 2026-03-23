@@ -96,4 +96,5 @@ public abstract class CanardDeCombat implements Soignable, Combattant {
 
     @Override
     public abstract void attaquer(CanardDeCombat cible);
+    public void finDeTour() {}
 }
