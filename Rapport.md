@@ -13,3 +13,7 @@ Puisque la surcharge  est bloquée par le type déclaré, il faut exploiter la r
 Pour s'en sortir, il faut contourner la vérification stricte des types des classes Java. 
 Pour ce faire, on utilise l'abstraction via une méthode polymorphe  : Au lieu de passer l'objet entier, on crée une méthode abstraite getType() redéfinie par chaque sous-classe. La méthode attaquer utilise ensuite l'énumération retournée par this.getType() et cible getType() pour trouver le multiplicateur dans un tableau.
 
+# Reflexion R3
+
+Nous avons dû écrire 13 méthodes etreAttaqueePar au total (4 dans la classe mère et 9 redéfinies dans les sous-classes).
+L'ajout d'un 5ème type, comme Électrique, montre parfaitement les limites de cette approche. La lourdeur du Double Dispatch saute aux yeux car il devient obligatoire de modifier la classe mère pour y déclarer la nouvelle attaque, puis d'aller modifier toutes les sous-classes existantes pour la redéfinir. Bien que cette solution soit du polymorphisme pur et évite les conditions inutiles, elle viole le principe Ouvert/Fermé (SOLID). 
