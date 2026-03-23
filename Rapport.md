@@ -31,3 +31,7 @@ L'approche par héritage crée effectivement une explosion combinatoire. Pour 4 
 L'utilisation de instanceof est ici un signe flagrant de mauvaise conception. Cela force la classe Arene à connaître les types spécifiques de canards et leurs comportements intimes, ce qui brise l'encapsulation.
 La solution orientée objet est d'utiliser le polymorphisme avec une méthode finDeTour() déclarée dans la classe mère et redéfinie uniquement dans les sous-classes qui en ont besoin.
 Si l'on ajoute un CanardGlace qui fond à chaque tour, on code simplement sa perte de PV dans sa propre méthode finDeTour(). La classe Arene n'aura jamais besoin d'être modifiée : elle se contentera d'appeler canard.finDeTour() pour chaque combattant en lice. C'est la résolution dynamique qui exécutera automatiquement le bon comportement selon le type réel du canard.
+
+# Diagramme UML
+
+Un diagramme de classes de la partie A est présent dans le dossier.
