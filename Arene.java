@@ -11,7 +11,7 @@ public class Arene {
      * @param e2 La deuxième équipe.
      */
     public void combattre(Equipe e1, Equipe e2) {
-    public void combattre(Equipe e1, Equipe e2) {
+    
         System.out.println("=== COMBAT ===");
         int tour = 1;
 
